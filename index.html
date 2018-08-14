@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>
+        Recipes
+    </title>            
+</head>
 <body dir="rtl">
 
 <!-- Navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-black w3-card">
-    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">עוגת ביסקויטים שוקולד</a>
-    <a href="#band" class="w3-bar-item w3-button w3-padding-large w3-hide-small">X</a>
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="loadRecipe()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a onclick="loadRecipe(this)" id="cake_biscuit" class="w3-bar-item w3-button w3-padding-large">עוגת ביסקויטים שוקולד</a>
+    <a onclick="loadRecipe(this)" id="lasanga" class="w3-bar-item w3-button w3-padding-large">לזניה</a>
   </div>
 </div>
 
@@ -22,74 +25,10 @@
 
   <!-- Section -->
   <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="biscuit_cake">
-    <h2 class="w3-wide">עוגת ביסקויטים שוקולד</h2>
-    <i><a href="https://www.homecookingadventure.com/recipes/no-bake-chocolate-biscuit-cake">biscuit cake</a></i>
-    <p class="w3-justify">
-
-      28 גרם (800 גרם) ביסקוויטים
-      <br>
-      1 כוס (100 גרם) אגוזים (אגוזי מלך, אגוזי לוז), קלוי, קצוץ מעט
-      <br>
-      <br>
-      <u>
-      סירופ שוקולד
-      </u>
-      <br>
-      1 כוס (200 גרם) סוכר
-      <br>
-      1/2 כוס (60 גרם) אבקת קקאו לא ממותקת
-      <br>
-      1 כוס (240 מ"ל) מים
-      <br>
-      2/3 כוס (150 גרם) חמאה
-      <br>
-      1 כפית תמצית וניל
-      <br>
-      <br>
-      <u>
-      שוקולד גנאש
-      </u>
-      <br>
-      1/2 כוס (120 גרם) קצפת (35% שומן)
-      <br>
-      1/2 כוס (120 גרם) שוקולד מריר, קצוץ
-      <br>
-      <br>
-
-      <h3>הוראות הכנה</h3>
-
-      <ol style="text-align: right">
-
-        <li> לשבור ביסקוויטים בקערה גדולה לחתיחות קטנות</li>
-        <li>אם רוצים אגוזים, לחמם במחבת כ-5 דקות ולהוסיף </li>
-        <li>להכנת הסירופ שוקולד:
-        <ul>
-        <li>בסיר לשים סוכר,  קקאו ולערבב </li>
-        <li>בהדרגה להוסיף מים עד שמתקבל תערובת אחידה ורכה</li>
-        <li>הוספת חמאה ולשים על אש בינונית ולערבב בהתמדה, להביא לרתיחה, 7-8 דקות לא להוציא לפני שמבעבע</li>
-        <li>להוציא מהאש והוספת תמצית וניל </li>
-        <li>מניחים בצד להתקרר 10-15 דקות </li>
-        </ul>
-         </li>
-        <li>לשפוך הסירופ על הביסקוויטים ולערבב עם כף\לקקן </li>
-        <li>להעביר לקערה עגולה שלא נדבקת (או אפשר להשתמש בנייר אפיה? או אולי בחד פעמי) </li>
-        <li>לשטח היטב. להשתמש בכף\מרית לשיטוח. </li>
-        <li>לכסות ולמקרר 30-60 דקות </li>
-        <li>להכנת גנאש שוקולד:
-        <ul>
-        <li>שמנת מתוקה בסיר קטן וחימום עד לפני רתיחה</li>
-        <li>לשפוך את השמנת על שוקולד מריר שנמצא בקערית ולחכות 1 דקה </li>
-        <li>כעת לערבב עד שתערובת אחידה עם ברק </li>
-        </ul>
-         </li>
-        <li>הוספת הגנאש לציפוי העוגה </li>
-        <li>להכניס למקרר 3-4 שעות </li>
-      </ol> 
-
+    <h2 id="recipe-name" class="w3-wide">  </h2>
+    <p id="recipe-text" class="w3-justify">
 
     </p>
-
-
 
   </div>
 
@@ -99,5 +38,9 @@
 
 
 </body>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="main.js"></script> 
 
 </html>
